@@ -2,19 +2,29 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+
+interface Props {
+  title: string;
+  headerTitle: string;
+  effectiveDate: string;
+  lastUpdated: string;
+}
+
+const { title, headerTitle, effectiveDate, lastUpdated } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" />
-    <title>Política de privacidad de Pulso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
   </head>
 
   <body>
-    <Header />
+    <Header headerTitle={headerTitle} effectiveDate={effectiveDate} />
     <slot />
-    <Footer />
+    <Footer lastUpdated={lastUpdated} />
   </body>
 </html>

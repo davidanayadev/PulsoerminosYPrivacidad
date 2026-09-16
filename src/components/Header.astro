@@ -1,4 +1,18 @@
-  <header>
-    <h1>Política de Privacidad</h1>
-    <p>Pulso — Fecha de entrada en vigor: 06 de agosto de 2026</p>
-  </header>
+---
+interface Props {
+  headerTitle: string;
+  effectiveDate: string;
+}
+
+const { headerTitle, effectiveDate } = Astro.props;
+---
+
+<header>
+  <div class="header-brand">
+    <img src="/icon.png" alt="Logotipo de Pulso" width="56" height="56" />
+    <div class="header-text">
+      <h1>{headerTitle}</h1>
+      <p>Pulso — Graba. Verifica. Transcribe</p>
+    </div>
+  </div>
+</header>

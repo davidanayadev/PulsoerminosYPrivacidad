@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "pulsoapp",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

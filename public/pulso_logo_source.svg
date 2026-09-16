@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#FBF7F2"/>
+
+  <!-- Microphone body -->
+  <g transform="translate(256,236)">
+    <rect x="-52" y="-140" width="104" height="180" rx="52" fill="#14213D"/>
+
+    <!-- Pulse line cut into the mic body -->
+    <path d="M -52 -50 L -20 -50 L -8 -84 L 6 -16 L 20 -50 L 52 -50"
+          fill="none" stroke="#FBF7F2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Mic stand -->
+    <path d="M -88 -20 a 88 88 0 0 0 176 0" fill="none" stroke="#14213D" stroke-width="16" stroke-linecap="round"/>
+    <line x1="0" y1="68" x2="0" y2="118" stroke="#14213D" stroke-width="16" stroke-linecap="round"/>
+    <line x1="-56" y1="118" x2="56" y2="118" stroke="#14213D" stroke-width="16" stroke-linecap="round"/>
+  </g>
+
+  <!-- Accent dot: recording indicator -->
+  <circle cx="352" cy="120" r="20" fill="#FF6B4A"/>
+</svg>

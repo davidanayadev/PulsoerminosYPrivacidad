@@ -1,3 +1,16 @@
-  <footer>
-    Pulso — &Uacute;ltima actualizaci&oacute;n: 06 de agosto de 2026
-  </footer>
+---
+interface Props {
+  lastUpdated: string;
+}
+
+const { lastUpdated } = Astro.props;
+---
+
+<footer>
+  <span>Pulso — Última actualización: {lastUpdated}</span>
+  <nav aria-label="Enlaces legales">
+    <a href="/privacidad">Política de privacidad</a>
+    <span aria-hidden="true">·</span>
+    <a href="/terminos">Términos y condiciones</a>
+  </nav>
+</footer>
