@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+const supportEmail = "daviidgarciia96@gmail.com";
+const mailtoSubject = "Solicitud de eliminación de cuenta y datos - Pulso";
+const mailtoBody = `Hola,
+
+Solicito la eliminación de mi cuenta y de todos los datos asociados en la aplicación Pulso.
+
+No puedo realizar el proceso desde la app. Adjunto la información necesaria para verificar mi identidad:
+
+- Correo asociado a la cuenta de Google:
+- Nombre del perfil en Pulso:
+- Motivo por el que no puedo acceder a la app:
+
+Quedo a la espera de instrucciones.
+
+Un saludo.`;
+const mailtoHref = `mailto:${supportEmail}?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+---
+
+<Layout
+  title="Eliminación de datos de Pulso"
+  headerTitle="Eliminación de datos"
+  effectiveDate="17 de septiembre de 2026"
+  lastUpdated="17 de septiembre de 2026"
+>
+  <main>
+    <p>
+      En <strong>Pulso</strong> respetamos tu derecho a controlar tus datos
+      personales. Puedes eliminar tu cuenta y toda la información asociada
+      directamente desde la aplicación, o solicitarlo por correo electrónico si
+      no tienes acceso a la app.
+    </p>
+
+    <h2>1. Método principal: eliminación desde la app</h2>
+    <p>El modo más rápido y seguro de eliminar tus datos es:</p>
+    <ol>
+      <li>Abre la aplicación <strong>Pulso</strong> en tu dispositivo.</li>
+      <li>Ve a <strong>Ajustes</strong>.</li>
+      <li>Selecciona <strong>Eliminar cuenta</strong>.</li>
+      <li>Confirma la acción cuando se te solicite.</li>
+    </ol>
+    <p>
+      Una vez confirmado, el proceso inicia el borrado de tu cuenta y de los
+      datos asociados descritos a continuación.
+    </p>
+
+    <h2>2. Datos que se eliminan</h2>
+    <p>El proceso de eliminación de cuenta afecta a:</p>
+    <ul>
+      <li>
+        <strong>Cuenta de Firebase:</strong> tu identidad de autenticación
+        gestionada por Firebase Authentication.
+      </li>
+      <li>
+        <strong>Perfil y datos asociados de Firestore:</strong> nombre, correo,
+        foto de perfil, fuentes personalizadas, uso del asistente y cualquier
+        otro dato de perfil almacenado en Firestore.
+      </li>
+      <li>
+        <strong>Datos de Google Drive asociados a Pulso:</strong> archivos,
+        copias de seguridad o contenido sincronizado que la app haya creado en
+        tu Google Drive bajo la autorización concedida a Pulso.
+      </li>
+      <li>
+        <strong>Información asociada en RevenueCat:</strong> identificadores y
+        datos de suscripción vinculados a tu cuenta en el sistema de gestión de
+        pagos de RevenueCat.
+      </li>
+      <li>
+        <strong>Datos locales de la aplicación:</strong> grabaciones,
+        transcripciones, proyectos, notas, marcadores y cualquier otra
+        información almacenada localmente en el dispositivo según el proceso
+        implementado en la app.
+      </li>
+    </ul>
+
+    <h2>3. Si no puedes acceder a la app</h2>
+    <p>
+      Si no puedes usar la aplicación (por ejemplo, porque has cambiado de
+      dispositivo, no recuerdas tus credenciales o la app no está disponible en
+      tu zona), puedes solicitar la eliminación de tus datos enviando un correo
+      a soporte.
+    </p>
+    <p>
+      <a href={mailtoHref}>Solicitar eliminación por correo electrónico</a>
+    </p>
+    <p>
+      El correo debe incluir, al menos, la dirección de correo asociada a tu
+      cuenta de Google en Pulso. Para proteger tu privacidad, el equipo de
+      soporte podrá pedirte información adicional que permita verificar que
+      eres el titular de la cuenta.
+    </p>
+
+    <h2>4. Verificación de identidad</h2>
+    <p>
+      Las solicitudes externas se revisan de forma manual. Antes de proceder al
+      borrado, podremos solicitarte datos o pruebas razonables para confirmar
+      que la cuenta te pertenece (por ejemplo, el correo de registro, el nombre
+      del perfil o información relativa a la última actividad visible). Este
+      paso evita la eliminación indebida de datos ajenos.
+    </p>
+
+    <h2>5. Plazos de eliminación y datos conservados</h2>
+    <p>
+      <strong>Esta información debe confirmarse antes de publicar esta página.</strong>
+    </p>
+    <p>
+      En este momento no consta en el proyecto un plazo concreto de eliminación
+      ni un listado definitivo de datos que deban conservarse una vez iniciado
+      el proceso. Te recomendamos que consultes la política interna de
+      retención o el código de la app para establecer:
+    </p>
+    <ul>
+      <li>El plazo máximo en el que se completará la eliminación.</li>
+      <li>
+        Si existe algún dato que deba conservarse por obligación legal,
+        contable o de seguridad, y durante cuánto tiempo.
+      </li>
+      <li>
+        Si los registros técnicos de error (logs) quedan excluidos del borrado
+        automático.
+      </li>
+    </ul>
+    <p>
+      Hasta que se confirme esta información, esta sección permanecerá como
+      borrador y no debe considerarse vinculante.
+    </p>
+
+    <h2>6. Contacto</h2>
+    <p>
+      Para cualquier duda sobre el proceso de eliminación de datos, puedes
+      escribirnos a:{" "}
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+    </p>
+  </main>
+</Layout>
