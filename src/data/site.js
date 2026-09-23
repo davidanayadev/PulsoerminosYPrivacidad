@@ -18,6 +18,7 @@ export const supportEmail = "infoanayateam@gmail.com";
 export const storeUrl = "#";
 
 export const legalUrls = {
+  home: "/",
   privacy: "/privacidad",
   terms: "/terminos",
   deletion: "/eliminacion-de-datos",

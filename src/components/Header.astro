@@ -1,20 +1,20 @@
 ---
-import { taglineFull } from "../data/site.js";
+import { tagline, taglineFull } from "../data/site.js";
 
 interface Props {
   headerTitle: string;
-  effectiveDate: string;
+  tagline?: string;
 }
 
-const { headerTitle, effectiveDate } = Astro.props;
+const { headerTitle, tagline: subtitle = taglineFull } = Astro.props;
 ---
 
 <header>
-  <div class="header-brand">
+  <a href="/" class="header-brand" aria-label="Volver al inicio">
     <img src="/icon.png" alt="Logotipo de Pulso" width="56" height="56" />
     <div class="header-text">
       <h1>{headerTitle}</h1>
-      <p>{taglineFull}</p>
+      <p>{subtitle}</p>
     </div>
-  </div>
+  </a>
 </header>

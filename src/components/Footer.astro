@@ -11,6 +11,8 @@ const { lastUpdated } = Astro.props;
 <footer>
   <span>{appName} — Última actualización: {lastUpdated}</span>
   <nav aria-label="Enlaces legales">
+    <a href={legalUrls.home}>Inicio</a>
+    <span aria-hidden="true">·</span>
     <a href={legalUrls.privacy}>Política de privacidad</a>
     <span aria-hidden="true">·</span>
     <a href={legalUrls.terms}>Términos y condiciones</a>

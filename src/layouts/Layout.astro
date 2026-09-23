@@ -6,11 +6,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   headerTitle: string;
-  effectiveDate: string;
   lastUpdated: string;
 }
 
-const { title, headerTitle, effectiveDate, lastUpdated } = Astro.props;
+const { title, headerTitle, lastUpdated } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +22,7 @@ const { title, headerTitle, effectiveDate, lastUpdated } = Astro.props;
   </head>
 
   <body>
-    <Header headerTitle={headerTitle} effectiveDate={effectiveDate} />
+    <Header headerTitle={headerTitle} />
     <slot />
     <Footer lastUpdated={lastUpdated} />
   </body>

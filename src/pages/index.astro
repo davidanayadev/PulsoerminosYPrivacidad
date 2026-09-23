@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "../styles/landing.css";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import { appName, tagline, description, storeUrl, legalUrls } from "../data/site.js";
 ---
 
@@ -15,15 +16,7 @@ import { appName, tagline, description, storeUrl, legalUrls } from "../data/site
   </head>
 
   <body>
-    <header>
-      <div class="header-brand">
-        <img src="/icon.png" alt={`Logotipo de ${appName}`} width="56" height="56" />
-        <div class="header-text">
-          <h1>{appName}</h1>
-          <p>{tagline}</p>
-        </div>
-      </div>
-    </header>
+    <Header headerTitle={appName} tagline={tagline} />
 
     <main class="landing">
       <section class="hero">
