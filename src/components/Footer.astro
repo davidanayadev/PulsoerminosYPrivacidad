@@ -1,4 +1,6 @@
 ---
+import { appName, legalUrls } from "../data/site.js";
+
 interface Props {
   lastUpdated: string;
 }
@@ -7,13 +9,12 @@ const { lastUpdated } = Astro.props;
 ---
 
 <footer>
-  <span>Pulso — Última actualización: {lastUpdated}</span>
+  <span>{appName} — Última actualización: {lastUpdated}</span>
   <nav aria-label="Enlaces legales">
-    <a href="/privacidad">Política de privacidad</a>
+    <a href={legalUrls.privacy}>Política de privacidad</a>
     <span aria-hidden="true">·</span>
-    <a href="/terminos">Términos y condiciones</a>
+    <a href={legalUrls.terms}>Términos y condiciones</a>
     <span aria-hidden="true">·</span>
-    <a href="/eliminacion-de-datos">Eliminación de datos</a>
-
+    <a href={legalUrls.deletion}>Eliminación de datos</a>
   </nav>
 </footer>

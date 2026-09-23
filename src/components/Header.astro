@@ -1,4 +1,6 @@
 ---
+import { taglineFull } from "../data/site.js";
+
 interface Props {
   headerTitle: string;
   effectiveDate: string;
@@ -12,7 +14,7 @@ const { headerTitle, effectiveDate } = Astro.props;
     <img src="/icon.png" alt="Logotipo de Pulso" width="56" height="56" />
     <div class="header-text">
       <h1>{headerTitle}</h1>
-      <p>Pulso — Graba. Verifica. Transcribe</p>
+      <p>{taglineFull}</p>
     </div>
   </div>
 </header>

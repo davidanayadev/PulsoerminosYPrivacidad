@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import { ownerName, supportEmail } from "../data/site.js";
 ---
 
 <Layout
@@ -9,16 +10,16 @@ import Layout from "../layouts/Layout.astro";
   effectiveDate="06 de agosto de 2026"
   lastUpdated="06 de agosto de 2026"
 >
-  <main>
+  <main class="page-content">
     <h2>1. Responsable del tratamiento</h2>
     <p>
       Pulso (en adelante, «la <strong>Aplicación</strong>») es
       una aplicación móvil destinada a la grabación, transcripción y
       verificación de grabaciones para profesionales de la información. Es
-      operada por <strong>David García Arranz</strong> (en adelante, «el <strong>Responsable</strong>», «nosotros»).
+      operada por <strong>{ownerName}</strong> (en adelante, «el <strong>Responsable</strong>», «nosotros»).
     </p>
     <p>
-      Contacto en materia de privacidad: <strong>daviidgarciia96@gmail.com</strong>
+      Contacto en materia de privacidad: <strong>{supportEmail}</strong>
     </p>
 
     <h2>2. Normativa aplicable</h2>
@@ -220,7 +221,7 @@ import Layout from "../layouts/Layout.astro";
     <h2>9. Derechos del Usuario (RGPD)</h2>
     <p>
       De acuerdo con el RGPD y la LOPDGDD, usted puede ejercer, gratuitamente,
-      los siguientes derechos dirigiéndose a <strong>daviidgarciia96@gmail.com</strong>:
+      los siguientes derechos dirigiéndose a <strong>{supportEmail}</strong>:
     </p>
     <ul>
       <li>
@@ -291,7 +292,7 @@ import Layout from "../layouts/Layout.astro";
     <h2>13. Contacto</h2>
     <p>
       Para cualquier cuestión relativa a esta Política de Privacidad o al
-      ejercicio de sus derechos, puede escribirnos a: <strong>daviidgarciia96@gmail.com</strong>.
+      ejercicio de sus derechos, puede escribirnos a: <strong>{supportEmail}</strong>.
     </p>
   </main>
 </Layout>

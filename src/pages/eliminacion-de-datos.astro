@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import { supportEmail } from "../data/site.js";
 
-const supportEmail = "daviidgarciia96@gmail.com";
 const mailtoSubject = "Solicitud de eliminación de cuenta y datos - Pulso";
 const mailtoBody = `Hola,
 
@@ -26,7 +26,7 @@ const mailtoHref = `mailto:${supportEmail}?subject=${encodeURIComponent(mailtoSu
   effectiveDate="17 de septiembre de 2026"
   lastUpdated="17 de septiembre de 2026"
 >
-  <main>
+  <main class="page-content">
     <p>
       En <strong>Pulso</strong> respetamos tu derecho a controlar tus datos
       personales. Puedes eliminar tu cuenta y toda la información asociada

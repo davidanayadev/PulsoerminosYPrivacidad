@@ -1,4 +1,4 @@
-    :root {
+:root {
       /* Colores de marca */
       --color-primary: #14213D;
       --color-accent: #FF6B4A;
@@ -40,8 +40,28 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    header {
+    /* Superficies y tarjetas compartidas */
+
+    /* Contenedor de artículo (páginas legales) */
+    .page-content {
+      max-width: 760px;
+      margin: 32px auto 64px;
+      padding: 40px 32px 48px;
       background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Look de tarjeta reutilizable (tarjetas de la landing) */
+    .surface-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    header {
       border-bottom: 1px solid var(--color-border);
       padding: 40px 20px;
     }
@@ -70,24 +90,12 @@
       margin: 0 0 4px;
       font-size: 1.6rem;
       font-weight: 700;
-      color: var(--color-primary);
       letter-spacing: -0.02em;
     }
 
     .header-text p {
       margin: 0;
-      color: var(--color-text-muted);
       font-size: 0.9rem;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 32px auto 64px;
-      padding: 40px 32px 48px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
     }
 
     h2 {
@@ -95,8 +103,6 @@
       margin-bottom: 16px;
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--color-primary);
-      border-bottom: 1px solid var(--color-border);
       padding-bottom: 10px;
     }
 
@@ -109,7 +115,6 @@
       margin-bottom: 12px;
       font-size: 1rem;
       font-weight: 600;
-      color: var(--color-primary);
     }
 
     p {
@@ -138,7 +143,6 @@
       border-spacing: 0;
       margin: 20px 0;
       font-size: 0.9rem;
-      background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -146,7 +150,6 @@
     }
 
     th, td {
-      border-bottom: 1px solid var(--color-border);
       padding: 12px 14px;
       text-align: left;
       vertical-align: top;
@@ -155,7 +158,6 @@
     th {
       background: var(--color-background);
       font-weight: 600;
-      color: var(--color-primary);
     }
 
     tr:last-child td {
@@ -176,7 +178,6 @@
     }
 
     strong {
-      color: var(--color-primary);
       font-weight: 600;
     }
 
@@ -185,8 +186,6 @@
       padding: 24px 20px;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--color-text-muted);
-      background: var(--color-surface);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -202,13 +201,41 @@
     }
 
     footer nav a {
-      color: var(--color-text-muted);
       text-decoration: none;
     }
 
     footer nav a:hover {
       color: var(--color-accent);
       text-decoration: underline;
+    }
+
+    /* Colores de texto compartidos */
+    .header-text h1,
+    h2,
+    h3,
+    th,
+    strong {
+      color: var(--color-primary);
+    }
+
+    .header-text p,
+    footer,
+    footer nav a {
+      color: var(--color-text-muted);
+    }
+
+    /* Superficies de marca compartidas */
+    header,
+    footer,
+    table {
+      background: var(--color-surface);
+    }
+
+    header,
+    h2,
+    th,
+    td {
+      border-bottom: 1px solid var(--color-border);
     }
 
     @media (min-width: 640px) {
@@ -226,7 +253,7 @@
     }
 
     @media (max-width: 480px) {
-      main {
+      .page-content {
         margin: 16px 12px 32px;
         padding: 28px 20px;
         border-radius: var(--radius-sm);

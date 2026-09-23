@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import { ownerName, supportEmail } from "../data/site.js";
 ---
 
 <Layout
@@ -9,11 +10,11 @@ import Layout from "../layouts/Layout.astro";
   effectiveDate="06 de agosto de 2026"
   lastUpdated="06 de agosto de 2026"
 >
-  <main>
+  <main class="page-content">
     <h2>1. Objeto y ámbito de aplicación</h2>
     <p>
       Las presentes Condiciones Generales regulan el acceso, descarga y uso de la
-      aplicación móvil <strong>Pulso</strong> (en adelante, «la <strong>Aplicación</strong>»), propiedad de <strong>David García Arranz</strong> (en adelante, «el <strong>Titular</strong>», «nosotros»).
+      aplicación móvil <strong>Pulso</strong> (en adelante, «la <strong>Aplicación</strong>»), propiedad de <strong>{ownerName}</strong> (en adelante, «el <strong>Titular</strong>», «nosotros»).
     </p>
     <p>
       Al descargar, instalar o utilizar la Aplicación, el usuario (en adelante,
@@ -24,11 +25,11 @@ import Layout from "../layouts/Layout.astro";
 
     <h2>2. Titular del servicio</h2>
     <ul>
-      <li><strong>Responsable:</strong> David García Arranz</li>
+      <li><strong>Responsable:</strong> {ownerName}</li>
       <li>
         <strong>Contacto:</strong>
         {" "}
-        <a href="mailto:daviidgarciia96@gmail.com">daviidgarciia96@gmail.com</a>
+        <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
       </li>
     </ul>
 
@@ -257,7 +258,7 @@ import Layout from "../layouts/Layout.astro";
     <p>
       Para cualquier duda, consulta o notificación relativa a estas Condiciones, el
       Usuario puede contactar con el Titular en:{" "}
-      <a href="mailto:daviidgarciia96@gmail.com">daviidgarciia96@gmail.com</a>.
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
     </p>
   </main>
 </Layout>
