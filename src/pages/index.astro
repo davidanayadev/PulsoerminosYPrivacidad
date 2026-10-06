@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "../styles/landing.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { appName, tagline, description, storeUrl, legalUrls } from "../data/site.js";
+import { appName, tagline, description, storeUrl, guideUrl, legalUrls } from "../data/site.js";
 ---
 
 <!doctype html>
@@ -27,6 +27,7 @@ import { appName, tagline, description, storeUrl, legalUrls } from "../data/site
           <p class="hero-description">{description}</p>
           <a class="cta" href={storeUrl}>Descargar en la tienda</a>
           <p class="hero-note">Disponible próximamente en App Store y Google Play.</p>
+          <a class="guide-cta" href={guideUrl}>Consulta la guía de uso</a>
         </div>
         <img src="/feature-graphic-1024x500.png" alt="Pulso: graba, transcribe y verifica" class="hero-image surface-card fade-up" />
       </section>
@@ -62,8 +63,19 @@ import { appName, tagline, description, storeUrl, legalUrls } from "../data/site
             </span>
             <h3>Verifica con IA</h3>
             <p>
-              Un asistente contrasta tus transcripciones con tus fuentes usando
-              inteligencia artificial (Gemini o Groq).
+              Consulta datos o verifica fragmentos de tus transcripciones con el
+              asistente de inteligencia artificial.
+            </p>
+          </article>
+
+          <article class="feature-card surface-card reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
+            </span>
+            <h3>Importa tus audios</h3>
+            <p>
+              Añade archivos .m4a, .mp3, .wav o .aac a tus proyectos. La
+              importación está disponible con Pulso Premium.
             </p>
           </article>
 

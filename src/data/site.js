@@ -17,6 +17,8 @@ export const supportEmail = "infoanayateam@gmail.com";
 // hasta que haya una URL real (Google Play / App Store).
 export const storeUrl = "#";
 
+export const guideUrl = "/guia";
+
 export const legalUrls = {
   home: "/",
   privacy: "/privacidad",
@@ -32,5 +34,6 @@ export default {
   ownerName,
   supportEmail,
   storeUrl,
+  guideUrl,
   legalUrls,
 };

@@ -1,5 +1,5 @@
 ---
-import { appName, legalUrls } from "../data/site.js";
+import { appName, guideUrl, legalUrls } from "../data/site.js";
 
 interface Props {
   lastUpdated: string;
@@ -10,8 +10,10 @@ const { lastUpdated } = Astro.props;
 
 <footer>
   <span>{appName} — Última actualización: {lastUpdated}</span>
-  <nav aria-label="Enlaces legales">
+  <nav aria-label="Navegación del sitio">
     <a href={legalUrls.home}>Inicio</a>
+    <span aria-hidden="true">·</span>
+    <a href={guideUrl}>Guía de uso</a>
     <span aria-hidden="true">·</span>
     <a href={legalUrls.privacy}>Política de privacidad</a>
     <span aria-hidden="true">·</span>

@@ -190,3 +190,9 @@
     margin-top: 28px;
   }
 }
+
+.guide-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 600;
+}

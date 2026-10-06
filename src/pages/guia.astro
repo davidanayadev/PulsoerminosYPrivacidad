@@ -1,0 +1,265 @@
+---
+import "../styles/global.css";
+import "../styles/guia.css";
+import Layout from "../layouts/Layout.astro";
+import { legalUrls, supportEmail } from "../data/site.js";
+---
+
+<Layout
+  title="Guía de uso de Pulso"
+  headerTitle="Guía de uso"
+  lastUpdated="06 de octubre de 2026"
+>
+  <main id="top" class="page-content">
+    <div class="guide-intro">
+      <p>
+        Aprende a grabar, importar y organizar audios, transcribirlos y revisar
+        información con Pulso. Las funciones Premium se indican en cada sección.
+      </p>
+    </div>
+
+    <nav class="guide-index" aria-label="Índice de la guía">
+      <h2>En esta guía</h2>
+      <ol>
+        <li><a href="#acceso">Acceder a Pulso</a></li>
+        <li><a href="#proyectos">Proyectos y grabaciones</a></li>
+        <li><a href="#importar">Importar un archivo de audio</a></li>
+        <li><a href="#reproductor">Reproducir y organizar el contenido</a></li>
+        <li><a href="#transcribir">Transcribir un audio</a></li>
+        <li><a href="#asistente">Verificar información con IA</a></li>
+        <li><a href="#drive">Google Drive</a></li>
+        <li><a href="#ajustes">Ajustes, Premium y privacidad</a></li>
+      </ol>
+    </nav>
+
+    <section id="acceso" class="guide-section">
+      <h2>1. Acceder a Pulso</h2>
+      <ol>
+        <li>Abre Pulso y pulsa <strong>Continuar con Google</strong>.</li>
+        <li>Elige la cuenta de Google con la que quieras iniciar sesión.</li>
+      </ol>
+      <p>
+        Algunas funciones, como el asistente, la suscripción y la sincronización
+        con Drive, requieren iniciar sesión. La grabación, los proyectos y las
+        transcripciones se guardan localmente en el dispositivo.
+      </p>
+    </section>
+
+    <section id="proyectos" class="guide-section">
+      <h2>2. Proyectos y grabaciones</h2>
+      <h3>Crear una grabación</h3>
+      <ol>
+        <li>En <strong>Proyectos</strong>, pulsa el botón del micrófono.</li>
+        <li>Escribe un título y, si quieres, el nombre del participante.</li>
+        <li>Pulsa el botón de grabar. Puedes pausarlo y reanudarlo.</li>
+        <li>
+          Mientras grabas, añade <strong>marcadores rápidos</strong> y escribe{" "}
+          <strong>notas rápidas</strong>; quedan asociados a su momento en el audio.
+        </li>
+        <li>
+          Pulsa detener y elige <strong>Guardar</strong> para añadir la grabación
+          a tus proyectos, o descártala si no quieres conservarla.
+        </li>
+      </ol>
+      <p>
+        Pulso no transcribe en directo: primero termina y guarda la grabación;
+        después puedes iniciar la transcripción desde el reproductor.
+      </p>
+      <h3>Encontrar proyectos</h3>
+      <p>
+        Usa el campo <strong>Buscar proyectos...</strong> para filtrar por nombre.
+        Pulsa una carpeta para ver sus grabaciones y después una grabación para
+        abrir el reproductor.
+      </p>
+    </section>
+
+    <section id="importar" class="guide-section">
+      <h2>3. Importar un archivo de audio</h2>
+      <p class="premium-note"><strong>Función Premium</strong></p>
+      <ol>
+        <li>Abre <strong>Proyectos</strong>.</li>
+        <li>Pulsa el botón con el icono de documento, junto al micrófono.</li>
+        <li>Elige un archivo de audio compatible en el selector del dispositivo.</li>
+        <li>
+          Pulso lo copia a su almacenamiento local y crea un proyecto. El título
+          inicial se obtiene del nombre del archivo.
+        </li>
+      </ol>
+      <p>
+        Se admite un archivo por importación, en formato <strong>.m4a, .mp3,
+        .wav o .aac</strong>. El archivo original no se modifica. Si cancelas el
+        selector, no se crea ningún proyecto.
+      </p>
+      <p>
+        Si el archivo no es compatible o no hay espacio suficiente, Pulso muestra
+        un error y no completa la importación. Para usar esta función necesitas
+        tener Premium activo.
+      </p>
+    </section>
+
+    <section id="reproductor" class="guide-section">
+      <h2>4. Reproducir y organizar el contenido</h2>
+      <ul>
+        <li>
+          En el reproductor puedes pausar, avanzar o retroceder, cambiar la
+          velocidad y desplazarte por la forma de onda.
+        </li>
+        <li>
+          Pulsa el título para cambiarlo y guarda el nuevo nombre. En una
+          grabación original, el cambio también se aplica al nombre de su carpeta.
+        </li>
+        <li>
+          Pulsa un marcador, una nota o una línea de transcripción con marca de
+          tiempo para saltar a ese instante del audio.
+        </li>
+        <li>
+          Usa <strong>Compartir audio</strong> en la lista de grabaciones para
+          compartir el archivo mediante las opciones del dispositivo.
+        </li>
+      </ul>
+
+      <h3>Editar el audio</h3>
+      <p class="premium-note"><strong>Función Premium</strong></p>
+      <ol>
+        <li>Abre una grabación y pulsa <strong>Editar audio</strong>.</li>
+        <li>Selecciona el tramo en la forma de onda y aplica una operación:</li>
+      </ol>
+      <ul>
+        <li><strong>Recortar selección:</strong> conserva el tramo seleccionado.</li>
+        <li><strong>Excluir selección:</strong> elimina ese tramo del audio.</li>
+        <li><strong>Normalizar volumen:</strong> ajusta el nivel del audio.</li>
+      </ul>
+      <p>
+        Al guardar, puedes crear una nueva variante para conservar la versión
+        anterior o sobrescribir el audio actual. La edición modifica el audio del
+        proyecto; revisa la opción elegida antes de guardar.
+      </p>
+    </section>
+
+    <section id="transcribir" class="guide-section">
+      <h2>5. Transcribir un audio</h2>
+      <ol>
+        <li>
+          Si todavía no has descargado un modelo, ve a
+          {" "}<strong>Ajustes → Modelos de transcripción</strong> y descarga uno.
+          El modelo Base es la opción recomendada del plan gratuito; Small es
+          Premium. Comprueba que el modelo que quieres usar aparece marcado
+          como activo; pulsa su fila para seleccionarlo.
+        </li>
+        <li>Abre la grabación y pulsa <strong>Transcribir ahora</strong>.</li>
+        <li>Espera a que termine el proceso; la transcripción aparecerá debajo del audio.</li>
+      </ol>
+      <p>
+        La transcripción se procesa en el dispositivo y el audio no se envía a un
+        servicio de transcripción. La descarga del modelo sí requiere conexión a
+        internet. Una vez descargado, puedes transcribir sin conexión. No cierres
+        Pulso mientras se procesa el audio.
+      </p>
+      <p>
+        Si la transcripción tiene segmentos, puedes buscar palabras y pulsar una
+        línea para reproducir desde ese momento. También puedes borrar la
+        transcripción sin borrar el audio y volver a generarla.
+      </p>
+    </section>
+
+    <section id="asistente" class="guide-section">
+      <h2>6. Verificar información con IA</h2>
+      <p class="premium-note"><strong>Función Premium</strong></p>
+      <h3>Hacer una consulta</h3>
+      <ol>
+        <li>Abre la pestaña <strong>Asistente</strong>.</li>
+        <li>Escribe una pregunta y pulsa enviar.</li>
+        <li>Lee la respuesta y contrasta sus afirmaciones y fuentes antes de utilizarlas.</li>
+      </ol>
+      <p>
+        Para comprobar una frase concreta, abre la transcripción y pulsa el
+        icono de verificación junto al fragmento. Se envía ese fragmento al
+        asistente; no se verifica automáticamente la transcripción completa.
+      </p>
+      <h3>Conversaciones y fuentes</h3>
+      <ul>
+        <li>
+          Abre el menú de conversaciones para crear una conversación, cambiar a
+          otra, renombrarla, exportarla como .txt o eliminarla.
+        </li>
+        <li>
+          En <strong>Ajustes → Fuentes del asistente</strong> puedes consultar las
+          fuentes oficiales (INE y BOE), añadir dominios propios y quitar los que
+          hayas añadido.
+        </li>
+        <li>
+          En <strong>Ajustes → Asistente de IA</strong> puedes elegir Auto, Groq o
+          Gemini. En Auto o Groq también puedes elegir GPT-OSS 120B o GPT-OSS 20B.
+        </li>
+      </ul>
+      <p>
+        Las consultas necesitan conexión a internet y envían al servicio de IA la
+        pregunta o el fragmento seleccionado junto con los dominios de fuentes
+        configurados. Las respuestas son orientativas: comprueba la información
+        original antes de publicarla o tomar decisiones profesionales.
+      </p>
+      <p class="guide-caveat">
+        La configuración descrita por la app ofrece búsqueda web con citas al
+        elegir Groq; Gemini responde sin grounding. La disponibilidad efectiva
+        de proveedores y citas depende también de la configuración del servicio.
+      </p>
+    </section>
+
+    <section id="drive" class="guide-section">
+      <h2>7. Google Drive</h2>
+      <p class="premium-note"><strong>Sincronizar y restaurar son funciones Premium</strong></p>
+      <ul>
+        <li>
+          En una carpeta, pulsa <strong>Sincronizar carpeta</strong> para guardar
+          sus datos en el espacio privado de Pulso en Google Drive. También puedes
+          sincronizar una grabación desde el icono de sincronización de su fila.
+        </li>
+        <li>
+          En otro dispositivo, inicia sesión con la misma cuenta y ve a{" "}
+          <strong>Ajustes → Google Drive → Restaurar desde Drive</strong>.
+        </li>
+      </ul>
+      <p>
+        Esta sincronización guarda los datos del proyecto, como transcripción,
+        marcadores y notas, pero no sube el archivo de audio. Al restaurar en otro
+        dispositivo, el proyecto puede aparecer sin el audio original.
+      </p>
+      <p>
+        La sincronización se inicia manualmente; no se ejecuta automáticamente en
+        segundo plano. Para usar Drive, concede los permisos de Google cuando Pulso
+        los solicite.
+      </p>
+    </section>
+
+    <section id="ajustes" class="guide-section">
+      <h2>8. Ajustes, Premium y privacidad</h2>
+      <ul>
+        <li>
+          En <strong>Ajustes → Suscripción</strong> puedes consultar tu plan,
+          ver los planes Premium o gestionar una suscripción activa.
+        </li>
+        <li>
+          En <strong>Ajustes → Privacidad → Exportar mis datos</strong> puedes
+          guardar una copia de tus datos.
+        </li>
+        <li>
+          En <strong>Ajustes → Privacidad → Eliminar mi cuenta</strong> puedes
+          iniciar el borrado de la cuenta y los datos asociados. Es una acción
+          definitiva; revisa la información de{" "}
+          <a href={legalUrls.deletion}>eliminación de datos</a> antes de continuar.
+        </li>
+        <li>
+          Consulta la <a href={legalUrls.privacy}>política de privacidad</a> y
+          los <a href={legalUrls.terms}>términos y condiciones</a> para conocer
+          cómo se tratan los datos y las condiciones de uso.
+        </li>
+      </ul>
+    </section>
+
+    <p class="guide-feedback">
+      ¿Tienes dudas? Escríbenos a{" "}
+      <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+    </p>
+    <p class="guide-home"><a href="#top">Volver al inicio de la guía</a></p>
+  </main>
+</Layout>
