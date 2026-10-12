@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import { guideUrl, supportEmail } from "../data/site.js";
+
+const faqs = [
+  {
+    q: "¿Cómo transcribo un audio en Pulso?",
+    a: "Graba o importa el audio, ábrelo y pulsa «Transcribir ahora». La transcripción aparece debajo, con marcas de tiempo: puedes buscar palabras y pulsar una línea para reproducir desde ese momento.",
+  },
+  {
+    q: "¿Puedo transcribir sin conexión a internet?",
+    a: "Sí. La transcripción se procesa en tu propio dispositivo, así que, una vez descargado el modelo, no necesitas conexión. Solo la descarga del modelo (Ajustes → Modelos de transcripción) requiere internet.",
+  },
+  {
+    q: "¿El audio se envía a algún servidor?",
+    a: "No. El audio se transcribe localmente en tu dispositivo y no se envía a servidores de transcripción. Los archivos de audio tampoco se suben a Google Drive salvo que tú lo decidas.",
+  },
+  {
+    q: "¿Qué formatos de audio puedo importar?",
+    a: "Puedes importar archivos .m4a, .mp3, .wav y .aac (función Premium). El archivo original no se modifica y se admite un archivo por importación.",
+  },
+  {
+    q: "¿Cómo verifico datos con IA?",
+    a: "En la pestaña Asistente escribe tu pregunta, o abre una transcripción y pulsa el icono de verificación junto a un fragmento. Las respuestas son orientativas: contrasta las afirmaciones y sus fuentes antes de utilizarlas.",
+  },
+  {
+    q: "¿La verificación con IA envía mi transcripción?",
+    a: "Solo se envían los fragmentos necesarios para responder a tu consulta, junto con los dominios de fuentes configurados. La transcripción completa no se envía de forma automática.",
+  },
+  {
+    q: "¿Pulso es gratis? ¿Qué incluye Premium?",
+    a: "Pulso tiene un plan gratuito con grabación y transcripción local (modelo Base). Premium añade, entre otras funciones, la importación de audio, la edición de audio, el modelo Small, el asistente de IA y la sincronización con Google Drive.",
+  },
+  {
+    q: "¿Puedo sincronizar mi contenido con Google Drive?",
+    a: "Sí (función Premium). Puedes sincronizar carpetas o grabaciones con el espacio privado de Pulso en tu propia cuenta de Google Drive y restaurarlas en otro dispositivo. La sincronización guarda los datos del proyecto, pero no sube el archivo de audio.",
+  },
+  {
+    q: "¿Puedo editar el audio (recortar, normalizar)?",
+    a: "Sí (función Premium). Desde una grabación, «Editar audio» permite recortar o excluir un tramo y normalizar el volumen. Al guardar puedes crear una nueva variante o sobrescribir el audio.",
+  },
+  {
+    q: "¿Puedo grabar y tomar notas a la vez?",
+    a: "Sí. Mientras grabas puedes añadir marcadores rápidos y escribir notas rápidas; quedan asociados a su momento en el audio y puedes saltar a ellos desde el reproductor.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Layout
+  title="Preguntas frecuentes sobre Pulso — Transcribir y verificar audio"
+  description="Respuestas sobre transcribir audio sin internet, verificar datos con IA, privacidad, formatos y Premium en Pulso."
+  headerTitle="Preguntas frecuentes"
+  jsonLd={faqJsonLd}
+>
+  <main class="page-content" id="main">
+    <p>
+      Respuestas rápidas sobre cómo transcribir audio a texto y verificar
+      información con IA en Pulso.
+    </p>
+    {faqs.map((item) => (
+      <section class="faq-item">
+        <h2>{item.q}</h2>
+        <p>{item.a}</p>
+      </section>
+    ))}
+    <p>
+      ¿No encuentras tu respuesta? Consulta la <a href={guideUrl}>guía de uso</a> o escríbenos a <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+    </p>
+  </main>
+</Layout>

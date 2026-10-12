@@ -1,15 +1,18 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Seo from "../components/Seo.astro";
 import "../styles/global.css";
 
 interface Props {
   title: string;
+  description: string;
   headerTitle: string;
-  lastUpdated: string;
+  lastUpdated?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
-const { title, headerTitle, lastUpdated } = Astro.props;
+const { title, description, headerTitle, lastUpdated, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +21,7 @@ const { title, headerTitle, lastUpdated } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{title}</title>
+    <Seo title={title} description={description} jsonLd={jsonLd} />
   </head>
 
   <body>

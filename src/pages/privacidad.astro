@@ -6,15 +6,17 @@ import { ownerName, supportEmail } from "../data/site.js";
 
 <Layout
   title="Política de privacidad de Pulso"
+  description="Qué datos trata Pulso, con quién se comparten y cómo ejercer tus derechos. Tus grabaciones viven en tu dispositivo."
   headerTitle="Política de Privacidad"
-  lastUpdated="06 de agosto de 2026"
+  lastUpdated="11 de octubre de 2026"
 >
-  <main class="page-content">
+  <main class="page-content" id="main">
     <h2>1. Responsable del tratamiento</h2>
     <p>
       Pulso (en adelante, «la <strong>Aplicación</strong>») es
       una aplicación móvil destinada a la grabación, transcripción y
-      verificación de grabaciones para profesionales de la información. Es
+      verificación de audio para estudiantes, profesionales y público general.
+      Es
       operada por <strong>{ownerName}</strong> (en adelante, «el <strong>Responsable</strong>», «nosotros»).
     </p>
     <p>
@@ -37,6 +39,7 @@ import { ownerName, supportEmail } from "../data/site.js";
     </p>
 
     <h2>4. Datos que recopilamos y finalidades del tratamiento</h2>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr>
@@ -83,13 +86,9 @@ import { ownerName, supportEmail } from "../data/site.js";
           <td>Gestión de la suscripción premium</td>
           <td>Art. 6.1.b) RGPD (ejecución del contrato)</td>
         </tr>
-        <tr>
-          <td>Registros técnicos de error (logs)</td>
-          <td> Diagnóstico y mejora de la estabilidad de la Aplicación </td>
-          <td>Art. 6.1.f) RGPD (interés legítimo del Responsable)</td>
-        </tr>
       </tbody>
     </table>
+    </div>
     <p>
       <strong>La Aplicación no utiliza anuncios, no instala herramientas de analítica de terceros y no vende ni cede datos personales a terceros con fines comerciales.</strong>
     </p>
@@ -108,8 +107,9 @@ import { ownerName, supportEmail } from "../data/site.js";
     <h3>5.2. Almacenamiento local</h3>
     <p>
       Sus proyectos, notas, marcadores y transcripciones se guardan en una base
-      de datos <strong>SQLite local</strong> del dispositivo. Estos datos no se transmiten
-      al Responsable.
+      de datos <strong>SQLite local cifrada en reposo (SQLCipher)</strong>, cuya
+      clave se custodia en el almacén seguro del sistema (Keychain en iOS,
+      Keystore en Android). Estos datos no se transmiten al Responsable.
     </p>
 
     <h3>5.3. Google Drive (respaldo y sincronización)</h3>
@@ -150,6 +150,7 @@ import { ownerName, supportEmail } from "../data/site.js";
 
     <h2>6. Proveedores y transferencias internacionales</h2>
     <p>Los principales encargados del tratamiento son:</p>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr>
@@ -184,6 +185,7 @@ import { ownerName, supportEmail } from "../data/site.js";
         </tr>
       </tbody>
     </table>
+    </div>
     <p>
       Algunos de estos proveedores están establecidos en <strong>Estados Unidos</strong>. Dichas transferencias se realizan al amparo de las <strong>Decisiones de adecuación</strong> de la Comisión Europea o de <strong>Cláusulas Contractuales Tipo</strong> aprobadas por la UE, garantizando
       un nivel de protección equivalente al del Espacio Económico Europeo.
@@ -201,20 +203,19 @@ import { ownerName, supportEmail } from "../data/site.js";
         las conserve en su dispositivo o en su Google Drive. El Responsable no dispone
         de acceso a las mismas salvo que el Usuario las comparta.
       </li>
-      <li>
-        <strong>Logs de diagnóstico:</strong> se conservan localmente en el dispositivo
-        con un límite máximo de 500 registros.
-      </li>
     </ul>
 
     <h2>8. Seguridad</h2>
     <p>
       El Responsable aplica medidas técnicas y organizativas apropiadas: cifrado
-      en tránsito (<strong>TLS</strong>) para todas las comunicaciones,
+      en tránsito (<strong>TLS</strong>) para todas las comunicaciones, cifrado
+      en reposo de la base de datos local (<strong>SQLCipher</strong>),
       almacenamiento seguro de claves (Keychain/Keystore), control de acceso
       basado en identidad de Firebase y reglas de seguridad de Firestore que <strong>restringen el acceso a los datos a su propio titular</strong>. Las
       API keys de los servicios externos se almacenan únicamente en el servicio
       de gestión de secretos de Firebase y nunca se incrustan en la Aplicación.
+      En Android, la Aplicación bloquea las capturas de pantalla para proteger
+      el contenido sensible que se muestra en pantalla.
     </p>
 
     <h2>9. Derechos del Usuario (RGPD)</h2>
@@ -272,11 +273,15 @@ import { ownerName, supportEmail } from "../data/site.js";
 
     <h2>11. Menores</h2>
     <p>
-      La Aplicación está dirigida a profesionales de la información mayores de
-      edad. No recopilamos a sabiendas datos de menores de 14 años. Si tenemos
-      conocimiento de que se han tratado datos de un menor sin el consentimiento
-      de su titular de la patria potestad, procederemos a su supresión de forma
-      inmediata.
+      La Aplicación puede ser utilizada por personas adultas y por menores que
+      cumplan los requisitos de edad mínima de Google para la creación de una
+      cuenta en su país. En España, dicho requisito es de 14 años.
+    </p>
+    <p>
+      No recopilamos a sabiendas datos de personas menores de la edad mínima
+      exigida por Google en su país. Si tenemos constancia de que se han tratado
+      datos de una persona que no cumple dicho requisito, procederemos a su
+      supresión de forma inmediata.
     </p>
 
     <h2>12. Modificaciones de la Política de Privacidad</h2>

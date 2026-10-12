@@ -1,19 +1,21 @@
 ---
-import { appName, guideUrl, legalUrls } from "../data/site.js";
+import { appName, guideUrl, faqUrl, legalUrls } from "../data/site.js";
 
 interface Props {
-  lastUpdated: string;
+  lastUpdated?: string;
 }
 
 const { lastUpdated } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <footer>
-  <span>{appName} — Última actualización: {lastUpdated}</span>
   <nav aria-label="Navegación del sitio">
     <a href={legalUrls.home}>Inicio</a>
     <span aria-hidden="true">·</span>
     <a href={guideUrl}>Guía de uso</a>
+    <span aria-hidden="true">·</span>
+    <a href={faqUrl}>Preguntas frecuentes</a>
     <span aria-hidden="true">·</span>
     <a href={legalUrls.privacy}>Política de privacidad</a>
     <span aria-hidden="true">·</span>
@@ -21,4 +23,17 @@ const { lastUpdated } = Astro.props;
     <span aria-hidden="true">·</span>
     <a href={legalUrls.deletion}>Eliminación de datos</a>
   </nav>
+  <div class="footer-brand">
+    <img src="/icon.png" alt={appName} width="24" height="24" />
+    <span class="footer-copyright">
+      <span class="footer-c" aria-hidden="true">©</span>
+      <span>{year}</span>
+    </span>
+    {lastUpdated && (
+      <>
+        <span aria-hidden="true">·</span>
+        <span class="footer-updated">Última actualización: {lastUpdated}</span>
+      </>
+    )}
+  </div>
 </footer>

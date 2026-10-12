@@ -3,7 +3,9 @@ import "../styles/global.css";
 import "../styles/landing.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { appName, tagline, description, storeUrl, guideUrl, legalUrls } from "../data/site.js";
+import Seo from "../components/Seo.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import { appName, tagline, description, guideUrl, faqUrl } from "../data/site.js";
 ---
 
 <!doctype html>
@@ -12,98 +14,95 @@ import { appName, tagline, description, storeUrl, guideUrl, legalUrls } from "..
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{appName} — {tagline}</title>
+    <Seo
+      title={`${appName} — Transcribir audio a texto y verificar con IA`}
+      description="App para transcribir audio a texto en tu dispositivo, sin enviar el audio a la nube, y verificar datos con IA. Graba reuniones, clases o entrevistas."
+    />
+    <script is:inline>document.documentElement.classList.add("js");</script>
   </head>
 
   <body>
-    <Header headerTitle={appName} tagline={tagline} />
+    <Header headerTitle={appName} tagline={tagline} brandAs="p" />
 
-    <main class="landing">
+    <main class="landing" id="main">
       <section class="hero">
         <div class="hero-content fade-up">
-          <img src="/pulso_logo_source.svg" alt={`Logotipo de ${appName}`} class="hero-logo surface-card" width="112" height="112" />
-          <h1 class="hero-title">{appName}</h1>
-          <p class="hero-tagline">{tagline}</p>
+          <h1 class="hero-heading">Transcribe tus audios a texto sin que salgan de tu dispositivo.</h1>
           <p class="hero-description">{description}</p>
-          <a class="cta" href={storeUrl}>Descargar en la tienda</a>
-          <p class="hero-note">Disponible próximamente en App Store y Google Play.</p>
+          <!-- Botón de descarga oculto hasta que la app esté publicada en Google Play:
+          <a class="cta" href="#">Descargar en la tienda</a> -->
+          <p class="hero-note">Disponible próximamente en Google Play.</p>
           <a class="guide-cta" href={guideUrl}>Consulta la guía de uso</a>
         </div>
-        <img src="/feature-graphic-1024x500.png" alt="Pulso: graba, transcribe y verifica" class="hero-image surface-card fade-up" />
+      </section>
+
+      <section class="privacy-first surface-card reveal">
+        <h2 class="section-title">La privacidad no es una función, es el punto de partida</h2>
+        <p class="privacy-lead">
+          Protecciones activas por defecto, sin que tengas que configurar nada.
+        </p>
+        <div class="pillars-grid">
+          <FeatureCard variant="row" title="Sin anuncios ni rastreadores" icon="shield">
+            No usamos anuncios ni analítica de terceros, y no vendemos tus datos.
+          </FeatureCard>
+
+          <FeatureCard variant="row" title="Transcripción en tu dispositivo" icon="device">
+            El audio se transcribe con Whisper en tu móvil y no se envía a
+            servidores de transcripción.
+          </FeatureCard>
+
+          <FeatureCard variant="row" title="Base de datos cifrada" icon="lock">
+            Tus proyectos, notas y transcripciones se guardan cifrados en tu
+            dispositivo.
+          </FeatureCard>
+
+          <FeatureCard variant="row" title="Capturas bloqueadas" icon="camera-off">
+            En Android, Pulso impide hacer capturas de pantalla de su contenido.
+          </FeatureCard>
+        </div>
+        <p class="privacy-foot">
+          Solo tú decides si tus datos se respaldan en tu Drive.
+        </p>
       </section>
 
       <section class="features">
         <h2 class="section-title reveal">Todo lo que necesitas en una sola app</h2>
         <div class="feature-grid">
-          <article class="feature-card surface-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-            </span>
-            <h3>Graba con claridad</h3>
-            <p>
-              Captura entrevistas y reuniones con el micrófono de tu dispositivo y
-              organízalas en proyectos y carpetas.
-            </p>
-          </article>
+          <FeatureCard title="Graba con claridad" icon="mic">
+            Captura clases, reuniones, entrevistas o notas de voz con el
+            micrófono de tu dispositivo y organízalas en proyectos y carpetas.
+          </FeatureCard>
 
-          <article class="feature-card surface-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-            </span>
-            <h3>Transcripción local</h3>
-            <p>
-              El audio se transcribe en tu propio dispositivo con Whisper.
-              Tus grabaciones no salen de tu móvil.
-            </p>
-          </article>
+          <FeatureCard title="Transcripción local" icon="edit">
+            El audio se transcribe en tu propio dispositivo con Whisper.
+            Tus grabaciones no se envían a servicios externos.
+          </FeatureCard>
 
-          <article class="feature-card surface-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9Z"/></svg>
-            </span>
-            <h3>Verifica con IA</h3>
-            <p>
-              Consulta datos o verifica fragmentos de tus transcripciones con el
-              asistente de inteligencia artificial.
-            </p>
-          </article>
+          <FeatureCard title="Verifica con IA" icon="sparkles">
+            Contrasta datos y fragmentos de tus transcripciones con el
+            asistente de IA y sus fuentes oficiales.
+          </FeatureCard>
 
-          <article class="feature-card surface-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
-            </span>
-            <h3>Importa tus audios</h3>
-            <p>
-              Añade archivos .m4a, .mp3, .wav o .aac a tus proyectos. La
-              importación está disponible con Pulso Premium.
-            </p>
-          </article>
+          <FeatureCard title="Importa tus audios" icon="file">
+            Añade archivos .m4a, .mp3, .wav o .aac a tus proyectos. La
+            importación está disponible con Pulso Premium.
+          </FeatureCard>
 
-          <article class="feature-card surface-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/><path d="M12 13v7"/><path d="M8 16h8"/></svg>
-            </span>
-            <h3>Respalda en tu Drive</h3>
-            <p>
-              Sincroniza o exporta tu contenido a tu propia cuenta de Google
-              Drive, solo cuando tú lo decidas.
-            </p>
-          </article>
+          <FeatureCard title="Respalda en tu Drive" icon="cloud">
+            Sincroniza o exporta tu contenido a tu propia cuenta de Google
+            Drive, solo cuando tú lo decidas.
+          </FeatureCard>
         </div>
       </section>
 
-      <section class="privacy surface-card reveal">
-        <h2 class="section-title">Tus datos, en tu dispositivo</h2>
-        <p>
-          {appName} no usa anuncios ni herramientas de analítica de terceros.
-          Tus grabaciones y transcripciones viven en tu dispositivo y solo tú
-          decides si se respaldan en tu Drive.
-        </p>
-        <a href={legalUrls.privacy}>Política de privacidad</a>
+      <section class="faq-teaser">
+        <h2 class="section-title reveal">
+          <a href={faqUrl}>Preguntas frecuentes</a>
+        </h2>
       </section>
     </main>
 
-    <Footer lastUpdated="06 de agosto de 2026" />
+    <Footer />
 
     <script>
       const observer = new IntersectionObserver(

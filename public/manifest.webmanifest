@@ -1,0 +1,26 @@
+{
+  "name": "Pulso — Graba. Transcribe. Verifica",
+  "short_name": "Pulso",
+  "description": "Graba clases, reuniones o entrevistas, transcribíbelas en tu dispositivo y verifica datos con IA. Tu audio no se envía a servicios externos.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBF7F2",
+  "theme_color": "#14213D",
+  "icons": [
+    {
+      "src": "/playstore-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/ios-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

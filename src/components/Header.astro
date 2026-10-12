@@ -4,16 +4,19 @@ import { tagline, taglineFull } from "../data/site.js";
 interface Props {
   headerTitle: string;
   tagline?: string;
+  brandAs?: "h1" | "p";
 }
 
-const { headerTitle, tagline: subtitle = taglineFull } = Astro.props;
+const { headerTitle, tagline: subtitle = taglineFull, brandAs = "h1" } = Astro.props;
+const BrandTag = brandAs;
 ---
 
 <header>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <a href="/" class="header-brand" aria-label="Volver al inicio">
     <img src="/icon.png" alt="Logotipo de Pulso" width="56" height="56" />
     <div class="header-text">
-      <h1>{headerTitle}</h1>
+      <BrandTag class="header-title">{headerTitle}</BrandTag>
       <p>{subtitle}</p>
     </div>
   </a>

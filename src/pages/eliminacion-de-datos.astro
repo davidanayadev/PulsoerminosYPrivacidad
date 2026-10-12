@@ -22,10 +22,11 @@ const mailtoHref = `mailto:${supportEmail}?subject=${encodeURIComponent(mailtoSu
 
 <Layout
   title="Eliminación de datos de Pulso"
+  description="Cómo solicitar la eliminación de tu cuenta y de los datos asociados en Pulso."
   headerTitle="Eliminación de datos"
-  lastUpdated="17 de septiembre de 2026"
+  lastUpdated="11 de octubre de 2026"
 >
-  <main class="page-content">
+  <main class="page-content" id="main">
     <p>
       En <strong>Pulso</strong> respetamos tu derecho a controlar tus datos
       personales. Puedes eliminar tu cuenta y toda la información asociada
@@ -104,28 +105,21 @@ const mailtoHref = `mailto:${supportEmail}?subject=${encodeURIComponent(mailtoSu
 
     <h2>5. Plazos de eliminación y datos conservados</h2>
     <p>
-      <strong>Esta información debe confirmarse antes de publicar esta página.</strong>
+      Una vez confirmada la solicitud, el borrado se realiza de forma
+      inmediata. Se eliminan la cuenta de Firebase Authentication, el perfil y
+      los datos asociados de Firestore, la información vinculada en RevenueCat
+      y el contenido que Pulso haya creado en tu Google Drive bajo la
+      autorización concedida.
     </p>
     <p>
-      En este momento no consta en el proyecto un plazo concreto de eliminación
-      ni un listado definitivo de datos que deban conservarse una vez iniciado
-      el proceso. Te recomendamos que consultes la política interna de
-      retención o el código de la app para establecer:
+      Los datos almacenados en tu dispositivo se eliminan al ejecutar la
+      eliminación desde la app o, en su defecto, al desinstalarla.
     </p>
-    <ul>
-      <li>El plazo máximo en el que se completará la eliminación.</li>
-      <li>
-        Si existe algún dato que deba conservarse por obligación legal,
-        contable o de seguridad, y durante cuánto tiempo.
-      </li>
-      <li>
-        Si los registros técnicos de error (logs) quedan excluidos del borrado
-        automático.
-      </li>
-    </ul>
     <p>
-      Hasta que se confirme esta información, esta sección permanecerá como
-      borrador y no debe considerarse vinculante.
+      Con carácter general no conservamos datos personales una vez eliminada la
+      cuenta. Si alguna obligación legal exigiera conservar un dato concreto, se
+      mantendría bloqueado, sin uso para otras finalidades, durante el plazo
+      legalmente previsto.
     </p>
 
     <h2>6. Contacto</h2>

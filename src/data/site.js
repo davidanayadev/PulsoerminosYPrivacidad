@@ -6,7 +6,7 @@ export const tagline = "Graba. Transcribe. Verifica";
 export const taglineFull = `${appName} — ${tagline}`;
 
 export const description =
-  "Aplicación móvil para profesionales de la información: graba entrevistas, transcríbelas en tu dispositivo y verifica tus fuentes con inteligencia artificial.";
+  "Graba clases, reuniones, entrevistas o notas de voz y conviértelas en texto útil para estudiar, trabajar o informar, con IA para contrastar datos cuando la necesites.";
 
 export const ownerName = "David García Arranz";
 
@@ -18,6 +18,7 @@ export const supportEmail = "infoanayateam@gmail.com";
 export const storeUrl = "#";
 
 export const guideUrl = "/guia";
+export const faqUrl = "/preguntas-frecuentes";
 
 export const legalUrls = {
   home: "/",
@@ -35,5 +36,6 @@ export default {
   supportEmail,
   storeUrl,
   guideUrl,
+  faqUrl,
   legalUrls,
 };

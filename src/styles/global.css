@@ -3,6 +3,8 @@
       --color-primary: #14213D;
       --color-accent: #FF6B4A;
       --color-accent-hover: #E85A3A;
+      --color-accent-strong: #C2410C;
+      --color-accent-strong-hover: #A63A1E;
 
       /* Colores de superficie */
       --color-background: #FBF7F2;
@@ -26,8 +28,10 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
     }
 
     body {
@@ -61,6 +65,25 @@
       box-shadow: var(--shadow-md);
     }
 
+    /* Enlace de salto para navegación por teclado */
+    .skip-link {
+      position: absolute;
+      top: 0;
+      left: -9999px;
+      z-index: 100;
+      padding: 12px 20px;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: 0 0 var(--radius-sm) 0;
+      font-size: 0.9rem;
+    }
+
+    .skip-link:focus {
+      left: 0;
+      color: #fff;
+      text-decoration: none;
+    }
+
     header {
       border-bottom: 1px solid var(--color-border);
       padding: 40px 20px;
@@ -91,7 +114,7 @@
       text-decoration: none;
     }
 
-    .header-text h1 {
+    .header-title {
       margin: 0 0 4px;
       font-size: 1.6rem;
       font-weight: 700;
@@ -133,14 +156,19 @@
     }
 
     a {
-      color: var(--color-accent);
+      color: var(--color-accent-strong);
       text-decoration: none;
       transition: color 0.15s ease;
     }
 
     a:hover {
-      color: var(--color-accent-hover);
+      color: var(--color-accent-strong-hover);
       text-decoration: underline;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-accent-strong);
+      outline-offset: 2px;
     }
 
     table {
@@ -153,6 +181,16 @@
       border-radius: var(--radius-sm);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
+    }
+
+    .table-scroll {
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .table-scroll table {
+      margin: 0;
+      min-width: 520px;
     }
 
     th, td {
@@ -180,7 +218,7 @@
     }
 
     li::marker {
-      color: var(--color-accent);
+      color: var(--color-accent-strong);
     }
 
     strong {
@@ -190,12 +228,44 @@
     footer {
       border-top: 1px solid var(--color-border);
       padding: 24px 20px;
-      text-align: center;
       font-size: 0.85rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
+    }
+
+    .footer-brand img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .footer-copyright {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-c {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      line-height: 1;
     }
 
     footer nav {
@@ -211,12 +281,21 @@
     }
 
     footer nav a:hover {
-      color: var(--color-accent);
+      color: var(--color-accent-strong);
       text-decoration: underline;
     }
 
+    .footer-updated {
+      font-size: 0.8rem;
+    }
+
+    .faq-item h2 {
+      margin-top: 32px;
+      border-bottom: none;
+    }
+
     /* Colores de texto compartidos */
-    .header-text h1,
+    .header-title,
     h2,
     h3,
     th,
@@ -250,12 +329,6 @@
         text-align: left;
         gap: 20px;
       }
-
-      footer {
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -265,17 +338,7 @@
         border-radius: var(--radius-sm);
       }
 
-      .header-text h1 {
+      .header-title {
         font-size: 1.35rem;
       }
-
-      table, thead, tbody, th, td, tr { display: block; }
-      th { display: none; }
-      td {
-        border: none;
-        border-bottom: 1px solid var(--color-border);
-        padding: 8px 0;
-      }
-      tr { margin-bottom: 12px; }
-      tr:last-child td { border-bottom: 1px solid var(--color-border); }
     }

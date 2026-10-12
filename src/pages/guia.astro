@@ -2,19 +2,20 @@
 import "../styles/global.css";
 import "../styles/guia.css";
 import Layout from "../layouts/Layout.astro";
-import { legalUrls, supportEmail } from "../data/site.js";
+import { legalUrls, faqUrl, supportEmail } from "../data/site.js";
 ---
 
 <Layout
-  title="Guía de uso de Pulso"
+  title="Guía de uso de Pulso — Cómo transcribir y verificar audios"
+  description="Cómo grabar, importar y transcribir audios en Pulso, y cómo verificar información con IA. Paso a paso, con funciones Premium."
   headerTitle="Guía de uso"
-  lastUpdated="06 de octubre de 2026"
 >
-  <main id="top" class="page-content">
+  <main id="main" class="page-content">
     <div class="guide-intro">
       <p>
-        Aprende a grabar, importar y organizar audios, transcribirlos y revisar
-        información con Pulso. Las funciones Premium se indican en cada sección.
+        Aprende a grabar, importar y transcribir audios (reuniones, clases o
+        entrevistas) y a verificar información con IA en Pulso. Las funciones
+        Premium se indican en cada sección.
       </p>
     </div>
 
@@ -34,14 +35,19 @@ import { legalUrls, supportEmail } from "../data/site.js";
 
     <section id="acceso" class="guide-section">
       <h2>1. Acceder a Pulso</h2>
+      <p>
+        Para usar Pulso es necesario iniciar sesión con una cuenta de Google.
+        Esto permite identificarte de forma segura y acceder a funciones como el
+        asistente, la suscripción y la sincronización con Drive.
+      </p>
       <ol>
         <li>Abre Pulso y pulsa <strong>Continuar con Google</strong>.</li>
         <li>Elige la cuenta de Google con la que quieras iniciar sesión.</li>
       </ol>
       <p>
-        Algunas funciones, como el asistente, la suscripción y la sincronización
-        con Drive, requieren iniciar sesión. La grabación, los proyectos y las
-        transcripciones se guardan localmente en el dispositivo.
+        Aunque inicias sesión, tus grabaciones, proyectos y transcripciones se
+        guardan principalmente en tu dispositivo, salvo que actives la
+        sincronización con Google Drive.
       </p>
     </section>
 
@@ -257,9 +263,12 @@ import { legalUrls, supportEmail } from "../data/site.js";
     </section>
 
     <p class="guide-feedback">
+      Consulta también las <a href={faqUrl}>preguntas frecuentes</a>.
+    </p>
+    <p class="guide-feedback">
       ¿Tienes dudas? Escríbenos a{" "}
       <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
     </p>
-    <p class="guide-home"><a href="#top">Volver al inicio de la guía</a></p>
+    <p class="guide-home"><a href="#main">Volver al inicio de la guía</a></p>
   </main>
 </Layout>
